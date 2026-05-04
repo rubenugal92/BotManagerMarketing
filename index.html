@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* =========================
+   CHAT WHATSAPP STYLE
+========================= */
+
+.chat{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.chat-title{
+  font-weight:700;
+  margin-bottom:5px;
+  font-size:0.9rem;
+  color:var(--muted);
+}
+
+.bubble-user{
+  align-self:flex-end;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:16px 16px 4px 16px;
+  font-size:0.85rem;
+  max-width:80%;
+}
+
+.bubble-bot{
+  align-self:flex-start;
+  background:var(--card2);
+  border:1px solid var(--border);
+  padding:10px 14px;
+  border-radius:16px 16px 16px 4px;
+  font-size:0.85rem;
+  max-width:80%;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#F6F7FB;
+  --card:#FFFFFF;
+  --card2:#F1F4F9;
+  --text:#111827;
+  --muted:#6B7280;
+  --border:#E5E7EB;
+  --accent:#5B5FF7;
+  --accent2:#22C55E;
+  --shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+}
+
+h1,h2,h3{font-family:'Syne',sans-serif}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 24px;
+}
+
+/* NAV */
+nav{
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+}
+
+.logo{
+  font-weight:800;
+  font-size:1.2rem;
+}
+
+.logo span{color:var(--accent)}
+
+.btn{
+  background:var(--accent);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:40px;
+  padding:70px 0;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:3rem;
+  line-height:1.1;
+}
+
+.hero span{color:var(--accent)}
+
+.sub{color:var(--muted); margin:15px 0 25px}
+
+/* FEATURES */
+.section{padding:60px 0}
+
+.section h2{font-size:2rem}
+
+.section p{color:var(--muted); margin:10px 0 30px}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.feature{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+/* DASHBOARD */
+.dashboard{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+
+.dashboard-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.month{
+  font-weight:700;
+  font-size:1.1rem;
+}
+
+/* CALENDAR */
+.calendar{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:10px;
+}
+
+.day{
+  background:var(--card2);
+  border:1px solid var(--border);
+  border-radius:12px;
+  min-height:90px;
+  padding:6px;
+  font-size:0.8rem;
+  position:relative;
+}
+
+.day-number{
+  font-weight:700;
+  font-size:0.8rem;
+  margin-bottom:4px;
+}
+
+.event{
+  background:var(--accent);
+  color:#fff;
+  font-size:0.65rem;
+  padding:2px 6px;
+  border-radius:6px;
+  margin-top:4px;
+  display:block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.event.green{background:var(--accent2)}
+
+.event.gray{background:#6B7280}
+
+/* EMPLEADOS */
+.employees{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.panel{
+  background:var(--card2);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+}
+
+.employee{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  border-bottom:1px solid var(--border);
+  font-size:0.9rem;
+}
+
+.tag{
+  background:var(--accent);
+  color:#fff;
+  font-size:0.7rem;
+  padding:3px 8px;
+  border-radius:999px;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  padding:80px 20px;
+}
+
+.big-btn{
+  background:var(--accent);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  display:inline-block;
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .calendar{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">BotManager <span>by Midgard IT</span></div>
+
+    <a class="btn" href="mailto:rubenugal@gmail.com?subject=Solicitud%20de%20demo">
+      Solicitar demo
+    </a>
+  </div>
+</nav>
+
+
+<div class="container">
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Tu negocio<br><span>automatiza citas</span> por WhatsApp</h1>
+      <p class="sub">
+        BotManager es una app que te permite gestionar empleados, planning y citas en un solo sistema. 
+        Incluye un bot de WhatsApp que se conecta a dicha app y que es capaz de gestionar las citas sin intervención humana.
+      </p>
+      <a href="https://fisiocom-front.onrender.com/" class="btn" target="_blank">
+  Accede a la app
+</a>
+    </div>
+
+    <div class="card chat">
+      <div class="bubble-user">Quiero cita para el martes</div>
+      <div class="bubble-bot">Perfecto, ¿con qué profesional?</div>
+      <div class="bubble-user">Ana</div>
+      <div class="bubble-bot">Disponible 10:00 / 11:00 / 17:00</div>
+      <div class="bubble-user">17:00</div>
+      <div class="bubble-bot">✅ Cita confirmada</div>
+    </div>
+  </section>
+
+<!-- FEATURES -->
+<section class="section">
+  <h2>Todo lo que necesitas</h2>
+
+  <div class="grid">
+    <div class="feature">
+      <h3>Empleados</h3>
+      <p>Gestión completa. Crear nuevos empleados, modificarlos, eliminarlos, etc</p>
+    </div>
+    <div class="feature">
+      <h3>Planning</h3>
+      <p>Control de turnos. Altas, bajas, vacaciones...averigua el estado de tu plantilla en tan solo un vistazo</p>
+    </div>
+    <div class="feature">
+      <h3>WhatsApp Bot</h3>
+      <p>Automatización total. Deja que tu bot de WhatsApp gestione todas las reservas sin intervención humana.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="section">
+  <h2>Panel de control</h2>
+  <p>Tu negocio en tiempo real</p>
+
+  <div class="dashboard">
+
+    <div class="dashboard-header">
+      <div class="month">Mayo 2026</div>
+      <div style="color:var(--muted);font-size:0.9rem">Calendario de citas</div>
+    </div>
+
+    <!-- CALENDAR -->
+    <div class="calendar">
+
+      <div class="day">
+        <div class="day-number">1</div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">2</div>
+        <span class="event">10:00 Ana</span>
+      </div>
+
+      <div class="day">
+        <div class="day-number">3</div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">4</div>
+        <span class="event green">12:30 Juan</span>
+      </div>
+
+      <div class="day">
+        <div class="day-number">5</div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">6</div>
+        <span class="event">09:00 Laura</span>
+        <span class="event gray">18:00 Ana</span>
+      </div>
+
+      <div class="day">
+        <div class="day-number">7</div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">8</div>
+        <span class="event">11:00 Pedro</span>
+      </div>
+
+      <div class="day">
+        <div class="day-number">9</div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">10</div>
+        <span class="event green">16:00 Marta</span>
+      </div>
+
+      <div class="day">
+        <div class="day-number">11</div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">12</div>
+        <span class="event">10:30 Ana</span>
+      </div>
+
+      <div class="day">
+        <div class="day-number">13</div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">14</div>
+        <span class="event gray">17:00 Juan</span>
+      </div>
+
+    </div>
+
+    <!-- EMPLEADOS -->
+    <div class="employees">
+
+      <div class="panel">
+        <h3>Empleados</h3>
+
+        <div class="employee">
+          <span>Ana García</span>
+          <span class="tag">Activa</span>
+        </div>
+
+        <div class="employee">
+          <span>Juan Pérez</span>
+          <span class="tag">Turno tarde</span>
+        </div>
+
+        <div class="employee">
+          <span>Laura Díaz</span>
+          <span class="tag">Activa</span>
+        </div>
+
+      </div>
+
+      <div class="panel">
+        <h3>Planning</h3>
+        <p style="color:var(--muted);font-size:0.9rem;margin-top:10px">
+          Crea y gestiona el planning de tus empleados (días de trabajo, vacaciones, bajas, etc). El bot de WhatsApp solo ofrecerá citas en los días y horas disponibles.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Menos gestión. Más citas.</h2>
+  <br>
+
+  <a class="big-btn" href="mailto:rubenugal@gmail.com?subject=Demo%20gratuita">
+    Solicitar demo gratuita
+  </a>
+</section>
+
+</div>
+
+</body>
+</html>
