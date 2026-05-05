@@ -136,8 +136,10 @@ nav{
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
   gap:18px;
+  justify-items:center;
+  align-items:stretch;
 }
 
 .feature{
@@ -261,6 +263,10 @@ nav{
   .grid{grid-template-columns:1fr}
   .calendar{grid-template-columns:repeat(2,1fr)}
 }
+.pricing-grid .feature{
+  max-width:320px;
+  width:100%;
+}
 </style>
 </head>
 
@@ -281,10 +287,11 @@ nav{
   <!-- HERO -->
   <section class="hero">
     <div>
-      <h1>Tu negocio<br><span>automatiza citas</span> por WhatsApp</h1>
+      <h1>Olvídate<br><span>de gestionar citas manualmente.</span>Te presentamos Botmanager</h1>
       <p class="sub">
-        BotManager es una app que te permite gestionar empleados, planning y citas en un solo sistema. 
-        Incluye un bot de WhatsApp que se conecta a dicha app y que es capaz de gestionar las citas sin intervención humana.
+        BotManager es una app que te permite gestionar empleados, sus jornadas de trabajo y concertar las citas de los clientes de tu negocio en un solo sistema. 
+        Incluye un bot de WhatsApp que se conecta a BotManager para atender a tus clientes y concertarles citas comprobando la disponibilidad y la especialidad de tus trabajadores.
+        Olvidate del tedioso trabajo administrativo y deja que tu bot de WhatsApp gestione las reservas de tus clientes de forma automática. Tus clientes podrán reservar o cancelar sus citas simplemente enviando un mensaje por WhatsApp, sin necesidad de que tú o tu equipo intervenga en el proceso.
       </p>
       <a href="https://fisiocom-front.onrender.com/" class="btn" target="_blank">
   Accede a la app
@@ -315,8 +322,8 @@ nav{
       <p>Control de turnos. Altas, bajas, vacaciones...averigua el estado de tu plantilla en tan solo un vistazo</p>
     </div>
     <div class="feature">
-      <h3>WhatsApp Bot</h3>
-      <p>Automatización total. Deja que tu bot de WhatsApp gestione todas las reservas sin intervención humana.</p>
+      <h3>Gestión de citas con WhatsApp Bot</h3>
+      <p>Automatización total. Deja que tu bot de WhatsApp gestione todas las citas sin intervención humana.</p>
     </div>
   </div>
 </section>
@@ -324,7 +331,7 @@ nav{
 <!-- DASHBOARD -->
 <section class="section">
   <h2>Panel de control</h2>
-  <p>Tu negocio en tiempo real</p>
+  <p>Tu negocio en tiempo real (la imagen a continuación es solo para que te hagas una idea, la app Botmanager es mucho más completa)</p>
 
   <div class="dashboard">
 
@@ -368,10 +375,6 @@ nav{
         <div class="day-number">7</div>
       </div>
 
-      <div class="day">
-        <div class="day-number">8</div>
-        <span class="event">11:00 Pedro</span>
-      </div>
 
       <div class="day">
         <div class="day-number">9</div>
@@ -414,12 +417,12 @@ nav{
         </div>
 
         <div class="employee">
-          <span>Juan Pérez</span>
+          <span>Marta Pérez</span>
           <span class="tag">Turno tarde</span>
         </div>
 
         <div class="employee">
-          <span>Laura Díaz</span>
+          <span>Juan Díaz</span>
           <span class="tag">Activa</span>
         </div>
 
@@ -435,6 +438,59 @@ nav{
     </div>
 
   </div>
+</section>
+<!-- PRICING -->
+<section class="section">
+  <h2>Precios</h2>
+  <p>Elige el plan que mejor se adapte a tu negocio</p>
+
+<div class="grid pricing-grid">
+
+    <!-- PLAN MENSUAL -->
+   <div class="feature" style="text-align:center">
+  <h3>Plan Mensual</h3>
+
+  <p style="color:var(--accent2);font-weight:700;margin-bottom:5px">
+    🎁 1 mes de prueba gratis
+  </p>
+
+  <p style="font-size:2rem;font-weight:800;color:var(--accent);margin:10px 0">
+    9,99€ <span style="font-size:0.9rem;color:var(--muted)">/ mes</span>
+  </p>
+
+  <p style="color:var(--muted);font-size:0.9rem;margin-bottom:15px">
+    Acceso completo a la plataforma con actualizaciones incluidas.
+  </p>
+
+  <a class="btn" href="mailto:rubenugal@gmail.com?subject=Interés%20Plan%20Mensual%20BotManager">
+    Ponte en contacto
+  </a>
+</div>
+
+    <!-- PLAN PAGO ÚNICO -->
+   <div class="feature" style="text-align:center">
+  <h3>Pago único</h3>
+
+  <p style="color:var(--accent2);font-weight:700;margin-bottom:5px">
+    🎁 1 mes de prueba gratis
+  </p>
+
+  <p style="font-size:2rem;font-weight:800;color:var(--accent);margin:10px 0">
+    4999€
+  </p>
+
+  <p style="color:var(--muted);font-size:0.9rem;margin-bottom:15px">
+    Pago único para acceso completo de por vida a la plataforma. Actualizaciones incluidas.
+  </p>
+
+  <a class="btn" href="mailto:rubenugal@gmail.com?subject=Interés%20Plan%20Pago%20Único%20BotManager">
+    Ponte en contacto
+  </a>
+</div>
+
+  <p style="text-align:center;margin-top:20px;font-size:0.8rem;color:var(--muted)">
+    * El soporte informático se contrata por separado y se cotiza según necesidades.
+  </p>
 </section>
 
 <!-- CTA -->
