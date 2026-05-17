@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#F6F7FB;
+  --text:#111827;
+  --muted:#6B7280;
+  --accent:#5B5FF7;
+  --border:#E5E7EB;
+  --shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+h1,h2{
+  font-family:'Syne',sans-serif;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:60px 24px;
+}
+
+/* NAV */
+
+nav{
+  background:white;
+  border-bottom:1px solid var(--border);
+  padding:14px 0;
+}
+
+.nav-inner{
+  max-width:900px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 24px;
+}
+
+.logo{
+  font-weight:800;
+}
+
+.logo span{
+  color:var(--accent);
+}
+
+.btn{
+  background:var(--accent);
+  color:white;
+  padding:10px 18px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* CONTENT */
+
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:30px;
+  box-shadow:var(--shadow);
+  margin-top:30px;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.7;
+  margin-top:15px;
+}
+
+.highlight{
+  color:var(--accent);
+  font-weight:700;
+}
+
+.back{
+  display:inline-block;
+  margin-top:20px;
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+
+</style>
+
+<title>Sobre nosotros - Midgard IT</title>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Midgard <span>IT</span></div>
+
+    <a href="index.html" class="btn">Volver</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <h1>Sobre nosotros</h1>
+
+  <div class="card">
+
+    <h2>Quiénes somos</h2>
+
+    <p>
+      Somos <span class="highlight">Midgard IT</span>, un equipo formado exclusivamente por desarrolladores de software veteranos
+      con años de experiencia en el sector tecnológico.
+    </p>
+
+    <p>
+      A lo largo de nuestras carreras hemos trabajado en grandes compañías multinacionales como
+      <span class="highlight">Decathlon</span>, <span class="highlight">Leroy Merlin</span>,
+      <span class="highlight">KPMG</span>, <span class="highlight">Deloitte</span> y <span class="highlight">Sngular</span>, entre otras.
+    </p>
+
+    <p>
+      Hemos participado en proyectos de gran escala, aprendiendo cómo construir software robusto,
+      escalable y mantenible en entornos reales de producción.
+    </p>
+    <br>
+    <h2>Nuestra filosofía</h2>
+
+    <p>
+      No buscamos hacernos ricos. Buscamos construir herramientas útiles.
+    </p>
+
+    <p>
+      Creemos que el software de calidad no debería estar reservado únicamente a grandes empresas con presupuestos elevados.
+      Por eso desarrollamos soluciones profesionales a precios accesibles, sin comprometer la calidad. ¿Te suena lo de "bueno, bonito y barato"? Pues no, no es un mito, es nuestra filosofía. Queremos demostrar que es posible ofrecer software de alta calidad sin que eso signifique un precio exorbitante.
+    </p>
+
+    <p>
+      Nos apasiona lo que hacemos, y con ayudar a nuestros clientes a mejorar su negocio es más que suficiente para nosotros.
+    </p>
+    <br>
+    <h2>Qué nos diferencia</h2>
+
+    <p>
+      No somos una agencia tradicional. No vendemos humo ni soluciones genéricas.
+      Diseñamos software real, basado en experiencia real en sistemas críticos y empresas grandes.
+    </p>
+
+    <p>
+      Cada producto que construimos está pensado para ser práctico, eficiente y resolver problemas reales de negocio.
+      Y...¿qué nos diferencia? Pues que estamos cansados de hacer soluciones millonarias para que los únicos beneficiados sean esas mismas grandes empresas. Queremos democratizar el acceso a software de calidad, y eso es lo que nos diferencia.
+    </p>
+
+    <a href="index.html" class="back">← Volver</a>
+
+  </div>
+
+</div>
+
+</body>
+</html>
