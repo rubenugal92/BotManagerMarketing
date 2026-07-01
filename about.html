@@ -103,6 +103,48 @@ p{
   font-weight:600;
 }
 
+/* CONTACTO */
+
+.contact{
+  margin-top:40px;
+  padding-top:25px;
+  border-top:1px solid var(--border);
+}
+
+.contact h2{
+  margin-bottom:15px;
+}
+
+.contact-links{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:10px;
+}
+
+.contact-links a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  transition:0.2s;
+}
+
+.contact-links a:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+}
+
+.icon{
+  font-size:20px;
+}
+
 </style>
 
 <title>Sobre nosotros - Midgard IT</title>
@@ -113,7 +155,6 @@ p{
 <nav>
   <div class="nav-inner">
     <div class="logo">Midgard <span>IT</span></div>
-
     <a href="index.html" class="btn">Volver</a>
   </div>
 </nav>
@@ -141,7 +182,9 @@ p{
       Hemos participado en proyectos de gran escala, aprendiendo cómo construir software robusto,
       escalable y mantenible en entornos reales de producción.
     </p>
+
     <br>
+
     <h2>Nuestra filosofía</h2>
 
     <p>
@@ -150,13 +193,15 @@ p{
 
     <p>
       Creemos que el software de calidad no debería estar reservado únicamente a grandes empresas con presupuestos elevados.
-      Por eso desarrollamos soluciones profesionales a precios accesibles, sin comprometer la calidad. ¿Te suena lo de "bueno, bonito y barato"? Pues no, no es un mito, es nuestra filosofía. Queremos demostrar que es posible ofrecer software de alta calidad sin que eso signifique un precio exorbitante.
+      Por eso desarrollamos soluciones profesionales a precios accesibles, sin comprometer la calidad.
     </p>
 
     <p>
-      Nos apasiona lo que hacemos, y con ayudar a nuestros clientes a mejorar su negocio es más que suficiente para nosotros.
+      Nos apasiona lo que hacemos, y ayudar a nuestros clientes a mejorar su negocio es más que suficiente para nosotros.
     </p>
+
     <br>
+
     <h2>Qué nos diferencia</h2>
 
     <p>
@@ -166,10 +211,28 @@ p{
 
     <p>
       Cada producto que construimos está pensado para ser práctico, eficiente y resolver problemas reales de negocio.
-      Y...¿qué nos diferencia? Pues que estamos cansados de hacer soluciones millonarias para que los únicos beneficiados sean esas mismas grandes empresas. Queremos democratizar el acceso a software de calidad, y eso es lo que nos diferencia.
     </p>
 
     <a href="index.html" class="back">← Volver</a>
+
+    <!-- CONTACTO -->
+    <div class="contact">
+      <h2>Contáctanos</h2>
+
+      <div class="contact-links">
+
+        <a href="https://wa.me/34697519399" target="_blank">
+          <span class="icon">📱</span>
+          <span>WhatsApp: 697 51 93 99</span>
+        </a>
+
+        <a href="mailto:rubenugal@gmail.com">
+          <span class="icon">📧</span>
+          <span>Gmail: rubenugal@gmail.com</span>
+        </a>
+
+      </div>
+    </div>
 
   </div>
 
