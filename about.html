@@ -1,190 +1,297 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre nosotros - Midgard IT</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-secondary: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --accent-dark: #1e40af;
+      --border: #334155;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
+    html, body {
+      height: 100%;
+    }
 
-:root{
-  --bg:#F6F7FB;
-  --text:#111827;
-  --muted:#6B7280;
-  --accent:#5B5FF7;
-  --border:#E5E7EB;
-  --shadow:0 10px 30px rgba(0,0,0,0.06);
-}
+    body {
+      font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    /* ==================== NAV ==================== */
+    nav {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
 
-h1,h2{
-  font-family:'Syne',sans-serif;
-}
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
 
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:60px 24px;
-}
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
 
-/* NAV */
+    .logo span {
+      color: var(--accent);
+    }
 
-nav{
-  background:white;
-  border-bottom:1px solid var(--border);
-  padding:14px 0;
-}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: linear-gradient(135deg, var(--accent) 0%, #2563eb 100%);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
 
-.nav-inner{
-  max-width:900px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 24px;
-}
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    }
 
-.logo{
-  font-weight:800;
-}
+    /* ==================== CONTENT ==================== */
+    .content {
+      padding: 80px 0;
+    }
 
-.logo span{
-  color:var(--accent);
-}
+    .content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+    }
 
-.btn{
-  background:var(--accent);
-  color:white;
-  padding:10px 18px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:600;
-}
+    .card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+    }
 
-/* CONTENT */
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
 
-.card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:30px;
-  box-shadow:var(--shadow);
-  margin-top:30px;
-}
+    .card p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
 
-p{
-  color:var(--muted);
-  line-height:1.7;
-  margin-top:15px;
-}
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
 
-.highlight{
-  color:var(--accent);
-  font-weight:700;
-}
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
 
-.back{
-  display:inline-block;
-  margin-top:20px;
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:600;
-}
+    .back-link:hover {
+      gap: 12px;
+      color: #60a5fa;
+    }
 
-/* CONTACTO */
+    /* ==================== CONTACT ==================== */
+    .contact-section {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
 
-.contact{
-  margin-top:40px;
-  padding-top:25px;
-  border-top:1px solid var(--border);
-}
+    .contact-section h2 {
+      margin-bottom: 24px;
+    }
 
-.contact h2{
-  margin-bottom:15px;
-}
+    .contact-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
 
-.contact-links{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin-top:10px;
-}
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
 
-.contact-links a{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
-  color:var(--text);
-  font-weight:600;
-  padding:10px 12px;
-  border:1px solid var(--border);
-  border-radius:12px;
-  background:#fff;
-  transition:0.2s;
-}
+    .contact-link:hover {
+      background: var(--bg-secondary);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
 
-.contact-links a:hover{
-  transform:translateY(-2px);
-  box-shadow:var(--shadow);
-}
+    .contact-icon {
+      font-size: 24px;
+    }
 
-.icon{
-  font-size:20px;
-}
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
 
-</style>
+      .content h1 {
+        font-size: 2rem;
+      }
 
-<title>Sobre nosotros - Midgard IT</title>
+      .card {
+        padding: 24px;
+      }
+
+      .card h2 {
+        font-size: 1.3rem;
+      }
+
+      .contact-links {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        gap: 12px;
+      }
+
+      .logo {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content {
+        padding: 60px 0;
+      }
+
+      .content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+      }
+
+      .card {
+        padding: 20px;
+        margin-bottom: 24px;
+      }
+
+      .card h2 {
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      animation: fadeInUp 0.8s ease both;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+  </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="nav-inner">
+  <div class="container nav-inner">
     <div class="logo">Midgard <span>IT</span></div>
     <a href="index.html" class="btn">Volver</a>
   </div>
 </nav>
 
-<div class="container">
-
+<div class="container content">
   <h1>Sobre nosotros</h1>
 
   <div class="card">
-
     <h2>Quiénes somos</h2>
-
+    
     <p>
-      Somos <span class="highlight">Midgard IT</span>, un equipo formado exclusivamente por desarrolladores de software veteranos
-      con años de experiencia en el sector tecnológico.
+      Somos <span class="highlight">Midgard IT</span>, un equipo formado exclusivamente por desarrolladores de software veteranos con años de experiencia en el sector tecnológico.
     </p>
 
     <p>
-      A lo largo de nuestras carreras hemos trabajado en grandes compañías multinacionales como
-      <span class="highlight">Decathlon</span>, <span class="highlight">Leroy Merlin</span>,
-      <span class="highlight">KPMG</span>, <span class="highlight">Deloitte</span> y <span class="highlight">Sngular</span>, entre otras.
+      A lo largo de nuestras carreras hemos trabajado en grandes compañías multinacionales como <span class="highlight">Decathlon</span>, <span class="highlight">Leroy Merlin</span>, <span class="highlight">KPMG</span>, <span class="highlight">Deloitte</span> y <span class="highlight">Sngular</span>, entre otras.
     </p>
 
     <p>
-      Hemos participado en proyectos de gran escala, aprendiendo cómo construir software robusto,
-      escalable y mantenible en entornos reales de producción.
+      Hemos participado en proyectos de gran escala, aprendiendo cómo construir software robusto, escalable y mantenible en entornos reales de producción.
     </p>
+  </div>
 
-    <br>
-
+  <div class="card">
     <h2>Nuestra filosofía</h2>
 
     <p>
@@ -192,50 +299,41 @@ p{
     </p>
 
     <p>
-      Creemos que el software de calidad no debería estar reservado únicamente a grandes empresas con presupuestos elevados.
-      Por eso desarrollamos soluciones profesionales a precios accesibles, sin comprometer la calidad.
+      Creemos que el software de calidad no debería estar reservado únicamente a grandes empresas con presupuestos elevados. Por eso desarrollamos soluciones profesionales a precios accesibles, sin comprometer la calidad.
     </p>
 
     <p>
       Nos apasiona lo que hacemos, y ayudar a nuestros clientes a mejorar su negocio es más que suficiente para nosotros.
     </p>
+  </div>
 
-    <br>
-
+  <div class="card">
     <h2>Qué nos diferencia</h2>
 
     <p>
-      No somos una agencia tradicional. No vendemos humo ni soluciones genéricas.
-      Diseñamos software real, basado en experiencia real en sistemas críticos tanto en empresas grandes como pequeñas.
+      No somos una agencia tradicional. No vendemos humo ni soluciones genéricas. Diseñamos software real, basado en experiencia real en sistemas críticos tanto en empresas grandes como pequeñas.
     </p>
 
     <p>
       Cada producto que construimos está pensado para ser práctico, eficiente y resolver problemas reales de negocio.
     </p>
 
-    <a href="index.html" class="back">← Volver</a>
+    <a href="index.html" class="back-link">← Volver</a>
 
-    <!-- CONTACTO -->
-    <div class="contact">
+    <div class="contact-section">
       <h2>Contáctanos</h2>
-
       <div class="contact-links">
-
-        <a href="https://wa.me/34697519399" target="_blank">
-          <span class="icon">📱</span>
+        <a href="https://wa.me/34697519399" target="_blank" class="contact-link">
+          <span class="contact-icon">📱</span>
           <span>WhatsApp: 697 51 93 99</span>
         </a>
-
-        <a href="mailto:rubenugal@gmail.com">
-          <span class="icon">📧</span>
+        <a href="mailto:rubenugal@gmail.com" class="contact-link">
+          <span class="contact-icon">📧</span>
           <span>Gmail: rubenugal@gmail.com</span>
         </a>
-
       </div>
     </div>
-
   </div>
-
 </div>
 
 </body>
